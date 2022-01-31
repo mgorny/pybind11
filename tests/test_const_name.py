@@ -25,7 +25,7 @@ from pybind11_tests import const_name as m
     ),
 )
 def test_const_name(func, selector, expected):
-    if isinstance(func, type(u"") if env.PY2 else str):
+    if isinstance(func, type("") if env.PY2 else str):
         pytest.skip(func)
     text = func(selector)
     assert text == expected
